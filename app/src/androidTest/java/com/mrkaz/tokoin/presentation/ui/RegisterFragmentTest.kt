@@ -62,6 +62,7 @@ class RegisterFragmentTest : BaseUITest() {
         onView(withId(R.id.tietPassword))
             .perform(typeText("123"))
         onView(withId(R.id.btnRegister)).perform(click())
+        SystemClock.sleep(500)
         //Assert
         onView(withId(R.id.txtError)).check(matches(withText("Empty Input")))
         onView(withId(R.id.txtError)).check(matches(isDisplayed()))
@@ -75,6 +76,7 @@ class RegisterFragmentTest : BaseUITest() {
         onView(withId(R.id.tietPassword))
             .perform(typeText(""))
         onView(withId(R.id.btnRegister)).perform(click())
+        SystemClock.sleep(500)
         //Assert
         onView(withId(R.id.txtError)).check(matches(withText("Empty Input")))
         onView(withId(R.id.txtError)).check(matches(isDisplayed()))
@@ -91,6 +93,7 @@ class RegisterFragmentTest : BaseUITest() {
         onView(withId(R.id.tietPassword))
             .perform(typeText("123"))
         onView(withId(R.id.btnRegister)).perform(click())
+        SystemClock.sleep(500)
         //Assert
         onView(withId(R.id.txtError)).check(matches(isDisplayed()))
     }
@@ -103,6 +106,7 @@ class RegisterFragmentTest : BaseUITest() {
         onView(withId(R.id.tietPassword))
             .perform(typeText("123"))
         onView(withId(R.id.btnRegister)).perform(click())
+        SystemClock.sleep(500)
         //Assert
         Assert.assertFalse(fragmentDialog.isShowing)
     }

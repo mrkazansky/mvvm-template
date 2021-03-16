@@ -64,6 +64,7 @@ class LoginFragmentTest : BaseUITest() {
             .perform(typeText("123"))
         onView(withId(R.id.btnLogin)).perform(click())
         //Assert
+        SystemClock.sleep(500)
         onView(withId(R.id.txtError)).check(matches(withText("Empty Input")))
         onView(withId(R.id.txtError)).check(matches(isDisplayed()))
     }
@@ -76,6 +77,7 @@ class LoginFragmentTest : BaseUITest() {
         onView(withId(R.id.tietPassword))
             .perform(typeText(""))
         onView(withId(R.id.btnLogin)).perform(click())
+        SystemClock.sleep(500)
         //Assert
         onView(withId(R.id.txtError)).check(matches(withText("Empty Input")))
         onView(withId(R.id.txtError)).check(matches(isDisplayed()))
@@ -93,6 +95,7 @@ class LoginFragmentTest : BaseUITest() {
             .perform(typeText("1234"))
         onView(withId(R.id.btnLogin)).perform(click())
         //Assert
+        SystemClock.sleep(500)
         onView(withId(R.id.txtError)).check(matches(withText("Login failed")))
         onView(withId(R.id.txtError)).check(matches(isDisplayed()))
     }
