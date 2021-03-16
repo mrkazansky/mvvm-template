@@ -220,6 +220,7 @@ class NewsRefFragmentTest : BaseUITest() {
             )
         //Arrange
         onView(withId(R.id.spinner)).perform(click())
+        SystemClock.sleep(500)
         onData(anything()).atPosition(1).perform(click())
         //Assert
         onView(withId(R.id.spinner)).check(matches(withSpinnerText(containsString(referencesList[1].reference.toUpperCase()))))
@@ -276,6 +277,7 @@ class NewsRefFragmentTest : BaseUITest() {
 
         onView(withId(R.id.spinner)).perform(click())
         onData(anything()).atPosition(1).perform(click())
+        SystemClock.sleep(500)
         onView(withId(R.id.spinner)).check(matches(withSpinnerText(containsString(referencesList[1].reference.toUpperCase()))))
         SystemClock.sleep(500)
         val actual = userDatabase.userDAO().login(user.username, user.password)[0].reference
