@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_profile"
+    app:startDestination="@+id/profile_page">
+
+    <fragment
+        android:id="@+id/profile_page"
+        android:name="com.mrkaz.tokoin.presentation.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/profile_to_login"
+            app:destination="@+id/dialog_login" />
+        <action
+            android:id="@+id/profile_to_register"
+            app:destination="@+id/dialog_register" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/dialog_login"
+        android:name="com.mrkaz.tokoin.presentation.ui.login.LoginFragment"
+        tools:layout="@layout/fragment_login" />
+    <dialog
+        android:id="@+id/dialog_register"
+        android:name="com.mrkaz.tokoin.presentation.ui.register.RegisterFragment"
+        tools:layout="@layout/fragment_register" />
+</navigation>

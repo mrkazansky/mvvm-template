@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_news"
+    app:startDestination="@+id/list">
+
+    <fragment
+        android:id="@+id/list"
+        android:name="com.mrkaz.tokoin.presentation.ui.news.NewsFragment"
+        android:label="@string/title_news"
+        tools:layout="@layout/fragment_news">
+        <action
+            android:id="@+id/action_news_to_detail"
+            app:destination="@id/detail"/>
+    </fragment>
+    <fragment
+        android:id="@+id/detail"
+        android:name="com.mrkaz.tokoin.presentation.ui.detail.NewsDetailFragment"
+        tools:layout="@layout/fragment_news_detail">
+        <argument
+            android:name="item"
+            app:argType="com.mrkaz.tokoin.data.models.news.NewsData"/>
+        <action
+            android:id="@+id/action_detail_to_web"
+            app:destination="@id/webView"/>
+    </fragment>
+    <fragment
+        android:id="@+id/webView"
+        android:name="com.mrkaz.tokoin.presentation.ui.webview.WebViewFragment"
+        tools:layout="@layout/fragment_web">
+        <argument
+            android:name="item"
+            app:argType="com.mrkaz.tokoin.data.models.news.NewsData"/>
+    </fragment>
+</navigation>

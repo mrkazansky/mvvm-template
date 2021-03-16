@@ -1,0 +1,19 @@
+{
+  "status": "ok",
+  "totalResults": 1,
+  "articles": [
+    {
+      "source": {
+        "id": "fox-news",
+        "name": "Fox News"
+      },
+      "author": "Custom Reference",
+      "title": "Custom Reference ‘armed’ protesters prompt Louisville police to declare ‘unlawful assembly’ - Fox News",
+      "description": "A protest in Louisville, Kentucky, on Saturday night, on the one-year anniversary of the death of Breonna Taylor, was declared an unlawful assembly, according to police.",
+      "url": "https://www.foxnews.com/us/breonna-taylor-armed-protesters-prompt-louisville-police-to-declare-unlawful-assembly",
+      "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2020/08/Louisville-Protest-2.jpg",
+      "publishedAt": "2021-03-14T05:38:31Z",
+      "content": "A protest in Louisville, Kentucky, on Saturday night, on the one-year anniversary of the death of Breonna Taylor, was declared an unlawful assembly, according to police.\r\nSome protesters, \"while arme… [+4212 chars]"
+    }
+  ]
+}

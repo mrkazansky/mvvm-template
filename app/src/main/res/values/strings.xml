@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tokoin</string>
+    <string name="error_in_retrieving_data">Error in retrieving data</string>
+    <string name="title_news">News</string>
+    <string name="title_reference">Reference</string>
+    <string name="title_profile">Profile</string>
+
+</resources>
