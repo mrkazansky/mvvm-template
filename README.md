@@ -28,9 +28,8 @@
 ./gradlew createDebugCoverageReport
 ``
 
-Note
 ```
-https://developer.android.com/training/testing/espresso/setup#set-up-environment
+Note: https://developer.android.com/training/testing/espresso/setup#set-up-environment
 ```
 
 #### Project structure
