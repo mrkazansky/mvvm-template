@@ -6,18 +6,18 @@ import com.mrkaz.tokoin.data.database.entity.UserEntity
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 
-class AuthRepository : KoinComponent {
+class AuthRepository : IAuthRepository, KoinComponent {
 
     val userDatabase: UserDatabase by inject()
     private val utils: Utils by inject()
 
-    suspend fun login(username: String, password: String): UserEntity? {
+    override suspend fun login(username: String, password: String): UserEntity? {
         val encodePassword = utils.md5(password)
         val result = userDatabase.userDAO().login(username, encodePassword)
         return if (result.isEmpty()) null else result[0]
     }
 
-    suspend fun register(username: String, password: String): Pair<Int, UserEntity> {
+    override suspend fun register(username: String, password: String): Pair<Int, UserEntity> {
         val encodePassword = utils.md5(password)
         val isValid = login(username, encodePassword)
         return if (isValid == null) {
@@ -29,7 +29,8 @@ class AuthRepository : KoinComponent {
         }
     }
 
-    suspend fun update(user: UserEntity) {
+    override suspend fun update(user: UserEntity) {
         userDatabase.userDAO().update(user)
     }
+
 }

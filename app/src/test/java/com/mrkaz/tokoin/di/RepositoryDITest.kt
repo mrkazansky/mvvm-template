@@ -1,6 +1,6 @@
 package com.mrkaz.tokoin.di
 
-import com.mrkaz.tokoin.data.repository.AuthRepository
+import com.mrkaz.tokoin.data.repository.IAuthRepository
 import com.mrkaz.tokoin.data.repository.NewsRepository
 import com.mrkaz.tokoin.data.repository.ReferenceRepository
 import io.mockk.mockk
@@ -12,7 +12,7 @@ val RepositoryDITest = module {
         mockk<NewsRepository>(relaxed = true)
     }
     single {
-        mockk<AuthRepository>(relaxed = true)
+        mockk<IAuthRepository>(relaxed = true)
     }
     single {
         mockk<ReferenceRepository>(relaxed = true)

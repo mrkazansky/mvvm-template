@@ -1,13 +1,13 @@
 package com.mrkaz.tokoin.usecase.auth
 
 import com.mrkaz.tokoin.data.database.entity.UserEntity
-import com.mrkaz.tokoin.data.repository.AuthRepository
+import com.mrkaz.tokoin.data.repository.IAuthRepository
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 
 class AuthUseCase : KoinComponent {
 
-    val authRepository: AuthRepository by inject()
+    val authRepository: IAuthRepository by inject()
 
     suspend fun login(username: String, password: String): UserEntity? {
         return authRepository.login(username, password)
