@@ -2,6 +2,7 @@ package com.mrkaz.tokoin.data.repository
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.mrkaz.tokoin.BaseUTTest
+import com.mrkaz.tokoin.data.repository.impl.NewsRepository
 import com.mrkaz.tokoin.di.configureTestAppComponent
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.*
@@ -24,8 +25,8 @@ class NewsRepositoryTest : BaseUTTest() {
     @Before
     fun start() {
         super.setUp()
-
         startKoin { modules(configureTestAppComponent(getMockWebServerUrl())) }
+        mRepo = NewsRepository()
     }
 
     @Test
@@ -37,7 +38,6 @@ class NewsRepositoryTest : BaseUTTest() {
             "success_news_list.json",
             HttpURLConnection.HTTP_OK
         )
-        mRepo = NewsRepository()
         //Assign
         val actual = mRepo.fetchTopHeadlines(page, null, country)
         val expectedCount = 38
@@ -57,7 +57,6 @@ class NewsRepositoryTest : BaseUTTest() {
             "success_news_list.json",
             HttpURLConnection.HTTP_OK
         )
-        mRepo = NewsRepository()
         //Assign
         val actual = mRepo.fetchTopHeadlines(page, query, null)
         val expectedCount = 38

@@ -1,8 +1,9 @@
-package com.mrkaz.tokoin.data.repository
+package com.mrkaz.tokoin.data.repository.impl
 
 import com.mrkaz.tokoin.common.utils.Utils
 import com.mrkaz.tokoin.data.database.UserDatabase
 import com.mrkaz.tokoin.data.database.entity.UserEntity
+import com.mrkaz.tokoin.data.repository.IAuthRepository
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 

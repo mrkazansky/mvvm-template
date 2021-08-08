@@ -3,6 +3,7 @@ package com.mrkaz.tokoin.data.repository
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.mrkaz.tokoin.BaseUTTest
 import com.mrkaz.tokoin.data.database.entity.ReferenceEntity
+import com.mrkaz.tokoin.data.repository.impl.ReferenceRepository
 import com.mrkaz.tokoin.di.configureTestAppComponent
 import io.mockk.coEvery
 import io.mockk.coVerify

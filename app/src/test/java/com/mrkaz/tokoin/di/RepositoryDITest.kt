@@ -1,21 +1,24 @@
 package com.mrkaz.tokoin.di
 
 import com.mrkaz.tokoin.data.repository.IAuthRepository
-import com.mrkaz.tokoin.data.repository.NewsRepository
-import com.mrkaz.tokoin.data.repository.ReferenceRepository
+import com.mrkaz.tokoin.data.repository.INewsRepository
+import com.mrkaz.tokoin.data.repository.IReferenceRepository
+import com.mrkaz.tokoin.data.repository.impl.AuthRepository
+import com.mrkaz.tokoin.data.repository.impl.NewsRepository
+import com.mrkaz.tokoin.data.repository.impl.ReferenceRepository
 import io.mockk.mockk
 import org.koin.dsl.module
 
 val RepositoryDITest = module {
 
     single {
-        mockk<NewsRepository>(relaxed = true)
+        mockk<INewsRepository>(relaxed = true)
     }
     single {
         mockk<IAuthRepository>(relaxed = true)
     }
     single {
-        mockk<ReferenceRepository>(relaxed = true)
+        mockk<IReferenceRepository>(relaxed = true)
     }
 
 }
